@@ -45,7 +45,7 @@ export default defineUserConfig({
         per_page: 10,
       }),
       //代理
-      downProxy:netlifyDownProxy(),
+      downProxy:cloudflarePagesDownProxy(),
     },
     // ... 可以配置多个挂载路径和仓库，以此类推
   ])
