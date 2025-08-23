@@ -20,9 +20,9 @@ export default defineUserConfig({
   lang: 'zh-CN',
   public: `./public`,
   // 网站标题，标题颜色可在 src/client/css/main.css 中修改
-  title: 'DList',
+  title: '02engine',
   // 网站的简介，有助于搜索引擎收录
-  description: 'DList - 深海的文件存储',
+  description: '02engine - 更好的turbowarp',
   // 页面 <head> 标签内添加的额外标签。 不要修改/logo.png可以替换掉这个文件，删除logo.png会导致构建出错。
   head: [['link', { rel: 'icon', href: '/logo.png' }]],
   // 页面预加载，所有其它页面所需的文件都会被预拉取。这对于小型站点来说是十分有帮助的，因为它会大大提升页面切换的速度。但是在你的网站有很多页面时不建议你这么做。
@@ -36,9 +36,9 @@ export default defineUserConfig({
       // 文件解析器，这里使用githubReleasesFilesAnalysis,可以解析github的release文件
       analysis: githubReleasesFilesAnalysis({
         // 仓库所有者的用户名
-        user: "Deep-sea-lab",
+        user: "02engine",
         // 仓库所有者的仓库名
-        repository: "FList",
+        repository: "desktop",
         // github 授权 Token, process.env.xxx  xxx 是环境变量名称。可以通过设置 githubToken 环境变量来配置
         authorizationToken: `${process.env.githubTokenHead || ""}${process.env.githubToken || ""}`,
         // 分页大小，不懂得话就当作取最新的多少个标签吧。
@@ -46,17 +46,6 @@ export default defineUserConfig({
       }),
       //代理
       downProxy:netlifyDownProxy(),
-    },
-    {
-      mountPath: "/表情包",
-      analysis: huggingFaceDatasetsAnalysis({
-        userName: "Deep-sea",
-        datasetsName: "deep",
-        branchName: "main",
-        path: "/",
-        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
-        maxDeep: 3
-      }),
     },
     // ... 可以配置多个挂载路径和仓库，以此类推
   ])

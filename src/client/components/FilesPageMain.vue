@@ -24,10 +24,6 @@ const content = computed(()=>frontmatter.value.flistData?.content);
       </MainBox>
       <FContent v-if="content" :content="content" style="padding: 1rem"></FContent>
     </div>
-    <div class="footer">
-      <FLink to="https://deep-sea.dpdns.org">🏠主页</FLink>
-      <FLink to="https://blog.deep-sea.dpdns.org">⚡博客</FLink>
-    </div>
 <!--    消息弹出框-->
     <Notification></Notification>
   </div>
