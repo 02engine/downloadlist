@@ -43,9 +43,6 @@ export default defineUserConfig({
       downProxy: cloudflarePagesDownProxy(),
     },
     {
-      downProxy: cloudflarePagesDownProxy(),
-    },
-    {
       mountPath: "/v1.0.2",
       analysis: huggingFaceDatasetsAnalysis({
         userName: "02engine",
