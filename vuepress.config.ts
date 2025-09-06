@@ -31,14 +31,14 @@ export default defineUserConfig({
   // 主题配置 FileList 是 vuepress 的一个主题，文件展示的功能全部由这个主题提供。
   theme: FileList([
     {
-      mountPath: "/huggingface测试",
+      mountPath: "/",
       analysis: huggingFaceDatasetsAnalysis({
-        userName: "Open-Orca",
-        datasetsName: "OpenOrca",
+        userName: "02engine",
+        datasetsName: "02engine_release",
         branchName: "main",
         path: "/",
         //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
-        maxDeep: 3
+        maxDeep: 10
       }),
     },
     // ... 可以配置多个挂载路径和仓库，以此类推
