@@ -31,12 +31,96 @@ export default defineUserConfig({
   // 主题配置 FileList 是 vuepress 的一个主题，文件展示的功能全部由这个主题提供。
   theme: FileList([
     {
-      mountPath: "/",
+      mountPath: "/v1.0.0",
       analysis: huggingFaceDatasetsAnalysis({
         userName: "02engine",
         datasetsName: "02engine_release",
         branchName: "main",
-        path: "/",
+        path: "/v1.0.0",
+        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
+        maxDeep: 10
+      }),
+      downProxy: cloudflarePagesDownProxy(),
+    },
+    {
+      mountPath: "/v1.0.1",
+      analysis: huggingFaceDatasetsAnalysis({
+        userName: "02engine",
+        datasetsName: "02engine_release",
+        branchName: "main",
+        path: "/v1.0.1",
+        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
+        maxDeep: 10
+      }),
+      downProxy: cloudflarePagesDownProxy(),
+    },
+    {
+      mountPath: "/v1.0.2",
+      analysis: huggingFaceDatasetsAnalysis({
+        userName: "02engine",
+        datasetsName: "02engine_release",
+        branchName: "main",
+        path: "/v1.0.2",
+        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
+        maxDeep: 10
+      }),
+      downProxy: cloudflarePagesDownProxy(),
+    },
+    {
+      mountPath: "/v1.0.3",
+      analysis: huggingFaceDatasetsAnalysis({
+        userName: "02engine",
+        datasetsName: "02engine_release",
+        branchName: "main",
+        path: "/v1.0.3",
+        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
+        maxDeep: 10
+      }),
+      downProxy: cloudflarePagesDownProxy(),
+    },
+    {
+      mountPath: "/v1.0.4",
+      analysis: huggingFaceDatasetsAnalysis({
+        userName: "02engine",
+        datasetsName: "02engine_release",
+        branchName: "main",
+        path: "/v1.0.4",
+        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
+        maxDeep: 10
+      }),
+      downProxy: cloudflarePagesDownProxy(),
+    },
+    {
+      mountPath: "/v1.0.5",
+      analysis: huggingFaceDatasetsAnalysis({
+        userName: "02engine",
+        datasetsName: "02engine_release",
+        branchName: "main",
+        path: "/v1.0.5",
+        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
+        maxDeep: 10
+      }),
+      downProxy: cloudflarePagesDownProxy(),
+    },
+    {
+      mountPath: "/v1.0.6",
+      analysis: huggingFaceDatasetsAnalysis({
+        userName: "02engine",
+        datasetsName: "02engine_release",
+        branchName: "main",
+        path: "/v1.0.6-3ae0fbf4",
+        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
+        maxDeep: 10
+      }),
+      downProxy: cloudflarePagesDownProxy(),
+    },
+    {
+      mountPath: "/v1.0.7",
+      analysis: huggingFaceDatasetsAnalysis({
+        userName: "02engine",
+        datasetsName: "02engine_release",
+        branchName: "main",
+        path: "/v1.0.7-292b0f80",
         //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
         maxDeep: 10
       }),
