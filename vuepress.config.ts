@@ -31,74 +31,18 @@ export default defineUserConfig({
   // 主题配置 FileList 是 vuepress 的一个主题，文件展示的功能全部由这个主题提供。
   theme: FileList([
     {
-      mountPath: "/v1.0.0",
-      analysis: huggingFaceDatasetsAnalysis({
-        userName: "02engine",
-        datasetsName: "02engine_release",
-        branchName: "main",
-        path: "/v1.0.0",
-        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
-        maxDeep: 10
-      }),
-      downProxy: cloudflarePagesDownProxy(),
-    },
-    {
-      mountPath: "/v1.0.2",
-      analysis: huggingFaceDatasetsAnalysis({
-        userName: "02engine",
-        datasetsName: "02engine_release",
-        branchName: "main",
-        path: "/v1.0.2",
-        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
-        maxDeep: 10
-      }),
-      downProxy: cloudflarePagesDownProxy(),
-    },
-    {
-      mountPath: "/v1.0.3",
-      analysis: huggingFaceDatasetsAnalysis({
-        userName: "02engine",
-        datasetsName: "02engine_release",
-        branchName: "main",
-        path: "/v1.0.3",
-        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
-        maxDeep: 10
-      }),
-      downProxy: cloudflarePagesDownProxy(),
-    },
-    {
-      mountPath: "/v1.0.4",
-      analysis: huggingFaceDatasetsAnalysis({
-        userName: "02engine",
-        datasetsName: "02engine_release",
-        branchName: "main",
-        path: "/v1.0.4",
-        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
-        maxDeep: 10
-      }),
-      downProxy: cloudflarePagesDownProxy(),
-    },
-    {
-      mountPath: "/v1.0.6",
-      analysis: huggingFaceDatasetsAnalysis({
-        userName: "02engine",
-        datasetsName: "02engine_release",
-        branchName: "main",
-        path: "/v1.0.6-3ae0fbf4",
-        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
-        maxDeep: 10
-      }),
-      downProxy: cloudflarePagesDownProxy(),
-    },
-    {
-      mountPath: "/v1.0.7",
-      analysis: huggingFaceDatasetsAnalysis({
-        userName: "02engine",
-        datasetsName: "02engine_release",
-        branchName: "main",
-        path: "/v1.0.7-292b0f80",
-        //最大深度,如果文件夹有很多层最大递归解析多少层，默认10
-        maxDeep: 10
+      // 挂载路径
+      mountPath: "/",
+      // 文件解析器，这里使用githubReleasesFilesAnalysis,可以解析github的release文件
+      analysis: githubReleasesFilesAnalysis({
+        // 仓库所有者的用户名
+        user: "02engine",
+        // 仓库所有者的仓库名
+        repository: "desktop",
+        // github 授权 Token, process.env.xxx  xxx 是环境变量名称。可以通过设置 githubToken 环境变量来配置
+        authorizationToken: process.env.githubToken,
+        // 分页大小，不懂得话就当作取最新的多少个标签吧。
+        per_page: 10,
       }),
       downProxy: cloudflarePagesDownProxy(),
     },
